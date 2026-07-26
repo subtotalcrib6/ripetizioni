@@ -1,6 +1,0 @@
-{
-  "name": "Matteo Ripetizioni",
-  "description": "Sito web promozionale per ripetizioni di Informatica, Sistemi e Reti e TPSIT a Cisterna e online con Matteo Mazzucco.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

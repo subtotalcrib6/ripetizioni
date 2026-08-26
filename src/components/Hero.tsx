@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Laptop, Globe, MessageCircle, Sparkles, CheckCircle2, Gift } from 'lucide-react';
+import { Home, Laptop, Globe, MessageCircle, Sparkles, CheckCircle2, Gift, ArrowRight } from 'lucide-react';
 import { WHATSAPP_LINK } from './Navbar';
 
 export const Hero: React.FC = () => {
@@ -19,63 +19,60 @@ export const Hero: React.FC = () => {
         </h1>
 
         {/* Subheader */}
-        <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 font-medium">
+        <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 font-medium">
           Lezioni individuali e pratiche per studenti delle Scuole Superiori (ITI e Liceo Scienze Applicate).
         </p>
 
-        {/* KEY VISUAL ELEMENT: Flyer Geometric Dark Blue Block */}
-        <div className="my-6 max-w-3xl mx-auto transform transition-all hover:scale-[1.01]">
-          <div className="relative p-1 bg-gradient-to-r from-sky-400 via-blue-500 to-sky-400 rounded-3xl tech-box-chamfer-lg shadow-2xl">
-            <div className="bg-[#0033aa] text-white px-6 py-8 sm:py-12 sm:px-12 rounded-[22px] tech-box-chamfer-lg relative overflow-hidden flex flex-col items-center justify-center">
+        {/* 🌟 NUOVO BLOCCO MODERNO (Senza rombo, angoli morbidi rounded-3xl e bordo glow) */}
+        <div className="my-8 max-w-3xl mx-auto">
+          <div className="relative p-1 rounded-3xl bg-gradient-to-r from-blue-600 via-sky-400 to-blue-600 shadow-xl shadow-blue-500/10">
+            <div className="bg-[#002b8c] dark:bg-slate-900 text-white rounded-[22px] p-6 sm:p-10 relative overflow-hidden">
               
-              {/* Subtle tech grid background inside hero box */}
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+              {/* Sfumatura di luce d'atmosfera sullo sfondo */}
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/30 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Main Headline Inside Flyer Block */}
-              <div className="text-center">
-                <span className="text-xs sm:text-sm text-sky-200 font-bold uppercase tracking-widest block mb-1">
-                  Tariffa Trasparente
+              {/* Header interno della card */}
+              <div className="relative z-10 text-center mb-6">
+                <span className="inline-block text-xs uppercase tracking-widest font-bold text-sky-300 bg-white/10 dark:bg-slate-800/80 px-3.5 py-1 rounded-full border border-white/10 mb-3">
+                  Tariffa Oraria Trasparente
                 </span>
-                <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-wider text-white drop-shadow-md text-center leading-none">
-                  RIPETIZIONI A 15€/ORA
-                </h2>
+                
+                <div className="flex items-center justify-center gap-2">
+                  <h2 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight">
+                    15€ <span className="text-xl sm:text-2xl font-bold text-sky-200 font-sans tracking-normal">/ ora</span>
+                  </h2>
+                </div>
               </div>
 
-              {/* Decorative Tech Cyan Line */}
-              <div className="w-24 sm:w-36 h-1 bg-[#38bdf8] my-6 rounded-full shadow-xs" />
-
-              {/* Location & Modality Info */}
-              <div className="w-full max-w-xl bg-blue-950/60 backdrop-blur-xs rounded-2xl border border-sky-400/30 p-4 sm:p-5">
-                <p className="text-sky-200 font-display font-bold text-sm sm:text-base uppercase tracking-widest mb-3 text-center">
-                  A CASA TUA O ONLINE
-                </p>
-
-                <div className="grid grid-cols-2 gap-3 sm:gap-6 text-white divide-x divide-sky-400/30">
-                  {/* House / At Home Option */}
-                  <div className="flex items-center justify-center gap-2.5 sm:gap-3 text-left">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-sky-500/20 border border-sky-300/40 flex items-center justify-center shrink-0">
-                      <Home className="w-5 h-5 text-sky-300 stroke-[1.75]" />
-                    </div>
-                    <div>
-                      <span className="block font-bold text-xs sm:text-sm text-white">A domicilio</span>
-                      <span className="block text-[11px] sm:text-xs text-sky-200">Cisterna di Latina</span>
-                    </div>
+              {/* Selettore / Box Modalità (A Domicilio vs Online) */}
+              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl mx-auto">
+                
+                {/* Modalità 1: Domicilio */}
+                <div className="bg-white/10 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-4 border border-white/15 flex items-center gap-3.5 text-left">
+                  <div className="w-11 h-11 rounded-xl bg-sky-400/20 border border-sky-300/30 flex items-center justify-center shrink-0">
+                    <Home className="w-5 h-5 text-sky-300" />
                   </div>
-
-                  {/* Laptop + Globe / Online Option */}
-                  <div className="flex items-center justify-center gap-2.5 sm:gap-3 text-left pl-3 sm:pl-6">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-sky-500/20 border border-sky-300/40 flex items-center justify-center shrink-0">
-                      <div className="relative flex items-center justify-center">
-                        <Laptop className="w-5 h-5 text-sky-300 stroke-[1.75]" />
-                        <Globe className="w-3 h-3 text-sky-200 absolute -top-1 -right-1" />
-                      </div>
-                    </div>
-                    <div>
-                      <span className="block font-bold text-xs sm:text-sm text-white">Online</span>
-                      <span className="block text-[11px] sm:text-xs text-sky-200">Google Meet / Discord</span>
-                    </div>
+                  <div>
+                    <span className="block font-bold text-sm text-white">A Domicilio</span>
+                    <span className="block text-xs text-sky-200">Cisterna di Latina e dintorni</span>
                   </div>
                 </div>
+
+                {/* Modalità 2: Online */}
+                <div className="bg-white/10 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-4 border border-white/15 flex items-center gap-3.5 text-left">
+                  <div className="w-11 h-11 rounded-xl bg-sky-400/20 border border-sky-300/30 flex items-center justify-center shrink-0">
+                    <div className="relative flex items-center justify-center">
+                      <Laptop className="w-5 h-5 text-sky-300" />
+                      <Globe className="w-2.5 h-2.5 text-sky-200 absolute -top-0.5 -right-0.5" />
+                    </div>
+                  </div>
+                  <div>
+                    <span className="block font-bold text-sm text-white">Online</span>
+                    <span className="block text-xs text-sky-200">Google Meet / Discord</span>
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -86,7 +83,7 @@ export const Hero: React.FC = () => {
         <div className="mt-8 flex flex-col items-center justify-center gap-3">
           
           {/* Badge Prova Gratuita */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300 text-xs font-bold shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300 text-xs font-bold shadow-2xs">
             <Gift className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Prima Lezione di Prova Gratuita (30 min online)</span>
           </div>

@@ -1,13 +1,32 @@
 import React from 'react';
 
-export const CircuitBackground: React.FC = () => {
+interface CircuitBackgroundProps {
+  className?: string;
+  withMask?: boolean; // Se true, sfuma i bordi per dare un effetto luce morbido
+}
+
+export const CircuitBackground: React.FC<CircuitBackgroundProps> = ({
+  className = '',
+  withMask = true
+}) => {
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40 dark:opacity-25 z-0">
+    <div 
+      className={`absolute inset-0 pointer-events-none overflow-hidden z-0 ${className}`}
+      style={
+        withMask
+          ? {
+              maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 80%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 80%)'
+            }
+          : undefined
+      }
+    >
       <svg
-        className="w-full h-full text-blue-600/15 dark:text-sky-400/30 transition-colors duration-300"
+        className="w-full h-full text-blue-600/20 dark:text-sky-400/25 transition-colors duration-300"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100%"
+        aria-hidden="true"
       >
         <defs>
           <pattern
@@ -32,6 +51,7 @@ export const CircuitBackground: React.FC = () => {
             <circle cx="90" cy="80" r="3" fill="currentColor" />
             <circle cx="60" cy="50" r="2.5" fill="currentColor" />
             <circle cx="60" cy="70" r="2.5" fill="currentColor" />
+            
             {/* Micro chip representation */}
             <rect
               x="52"
@@ -50,4 +70,3 @@ export const CircuitBackground: React.FC = () => {
     </div>
   );
 };
-
